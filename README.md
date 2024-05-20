@@ -29,7 +29,7 @@ and run one of these commands to install dependencies:
 
 #### **Step 3: Configure your project**
 
-You will need to use a database to run the project, I am using postgresql (you can use one of your preference) but I didn't share my dbconfig, but you can use the ***`.env-example`*** to configure yours.
+You will need to use a database to run the project, I am using postgresql (you can use one of your preference) but I didn't share my db config, but you can use the ***`.env-example`*** to configure your ***`.env`*** file, put it on the root of your project.
 
 #### **Step 4: Run**
 
