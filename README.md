@@ -1,7 +1,7 @@
 # 🚀 Get started here
 
-This project is a kind of receivers of ***pix manager***, where you can organize a list of them, making a CRUD, with some rules.
-Is not the object here realize a pix transfer or not like this (not yet) and for now it is only the back-end, after I can do the front and put the link here.
+This project is a kind of ***receivers of pix manager***, where you can organize a list of them, making a CRUD, with some rules.
+Is not the object here realize a pix transfer or something like this (not yet) and for now it is only the back-end, after I can do the front and put the link here.
 It was made with ***Node.js and PostgreSQL***
 This README will guide you through the project, since how you can clone it, configure and run locally.
 
@@ -10,13 +10,21 @@ This README will guide you through the project, since how you can clone it, conf
 #### **Step 1: Clone from Github**
 
 Access your Terminal in the directory where you want put the project and paste one of this codes:
-***`git clone [git@github.com](https://mailto:git@github.com):FreitasAssis/tech-challenge.git\`***
+
+***`git clone [git@github.com](https://mailto:git@github.com):FreitasAssis/tech-challenge.git`***
+
 or
+
 ***`git clone https://github.com/FreitasAssis/tech-challenge.git`***
 
 #### **Step 2: Install dependencies**
 
-Enter in the new repository created ***`cd tech_challenge`*** and run one of these commands to install dependencies:
+Enter in the new repository created
+
+***`cd tech_challenge`***
+
+and run one of these commands to install dependencies:
+
 ***`npm i`*** or ***`yarn`***
 
 #### **Step 3: Configure your project**
@@ -25,12 +33,21 @@ You will need to use a database to run the project, I am using postgresql (you c
 
 #### **Step 4: Run**
 
-You can run the project in your ***localhost:3000*** or setting another PORT in your env file. To run it you can use the command ***`npm run dev`*** or ***`yarn dev`***.
+You can run the project in your
+
+***localhost:3000***
+
+or setting another PORT in your env file. To run it you can use the command
+
+***`npm run dev`*** or ***`yarn dev`***
+
 In first time will be created the tables in your DB and run the project in your localhost:{PORT}. 
 
 #### **Step 5: Endpoints**
 
-Supposing you are using localhost:3000, you can check all endpoints using Swagger in ***[localhost:3000/api-docs](localhost:3000/api-docs)***
+Supposing you are using localhost:3000, you can check all endpoints using Swagger in
+
+***[localhost:3000/api-docs](localhost:3000/api-docs)***
 
 ## 💡 How to test
 
@@ -51,4 +68,5 @@ And the next command to run the tests:
 ## 💪 Final Considerations
 
 Thanks for reading me!
+
 I hope you enjoy this project and that it can help you with your need.
