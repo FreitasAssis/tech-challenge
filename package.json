@@ -1,0 +1,47 @@
+{
+  "name": "tech_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --inspect=127.0.0.1:9231 -r dotenv/config --files ./src/index.ts",
+    "build": "tsc",
+    "start": "node ./build/index.js",
+    "test:unit": "jest tests/unit/index.test.ts",
+    "test:integration": "jest tests/integration/index.test.ts --detectOpenHandles",
+    "swagger": "node src/swagger.mjs"
+  },
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FreitasAssis/tech-challenge"
+  },
+  "engines": {
+    "node": "21"
+  },
+  "keywords": [],
+  "author": "Luiz Freitas",
+  "license": "ISC",
+  "dependencies": {
+    "celebrate": "^15.0.3",
+    "cors": "^2.8.5",
+    "cpf-cnpj-validator": "^1.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-cache": "^5.1.2",
+    "password-validator": "^5.3.0",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "@types/swagger-ui-express": "^4.1.6",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}

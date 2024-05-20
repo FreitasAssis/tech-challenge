@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Compiled JavaScript files
+/dist/
+
+# TypeScript build directory
+/build/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Jest coverage reports
+coverage/
+
+# PostgreSQL database files
+*.sql
+
+# Log files
+*.log
+
+# Dependency lock files
+yarn.lock
+package-lock.json

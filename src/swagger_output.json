@@ -1,0 +1,243 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Tech Challenge",
+    "description": "Tech Challenge docs"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/seed-db": {
+      "get": {
+        "tags": ["Seed"],
+        "description": "Populate the database with the 30 first receivers",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/seed-cache": {
+      "get": {
+        "tags": ["Seed"],
+        "description": "Populate a cache with seed",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/receivers": {
+      "get": {
+        "tags": ["Receivers"],
+        "description": "List all receivers accepting to receive filters",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limite",
+            "description": "Limit of results for page",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pagina",
+            "description": "Page that we are interested in",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Receivers"],
+        "description": "Create a new receiver",
+        "required": true,
+        "parameters": [
+          {
+            "name": "Receiver data",
+            "in": "body",
+            "description": "Receiver data to create",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the receiver",
+                  "required": true
+                },
+                "document": {
+                  "type": "string",
+                  "description": "The document of the receiver (CPF, CNPJ, etc.)",
+                  "required": true
+                },
+                "email": {
+                  "type": "string",
+                  "description": "The email address of the receiver",
+                  "required": true
+                },
+                "pixKeyType": {
+                  "type": "string",
+                  "description": "The type of PIX key (CPF, CNPJ, EMAIL, TELEFONE, CHAVE_ALEATORIA)",
+                  "required": true
+                },
+                "pixKey": {
+                  "type": "string",
+                  "description": "The PIX key associated with the receiver",
+                  "required": true
+                }
+              },
+              "example": {
+                "name": "Receiver Name",
+                "document": "151.645.480-46",
+                "email": "receiver@email.com",
+                "pixKeyType": "CPF",
+                "pixKey": "151.645.480-46"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Receivers"],
+        "description": "Delete receivers",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "body",
+            "description": "Ids of receivers to delete",
+            "type": "array",
+            "required": true,
+            "items": {
+              "type": "string",
+              "example": "0c653e3b-f652-41cd-9898-0047f19d3779"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/receivers/{id}": {
+      "get": {
+        "tags": ["Receivers"],
+        "description": "Get a specific receiver by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Receivers"],
+        "description": "Change data of a receiver",
+        "required": true,
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Receiver data",
+            "in": "body",
+            "description": "Receiver data to create",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "The name of the receiver"
+                },
+                "document": {
+                  "type": "string",
+                  "description": "The document of the receiver (CPF, CNPJ, etc.)"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "The email address of the receiver"
+                },
+                "pixKeyType": {
+                  "type": "string",
+                  "description": "The type of PIX key (CPF, CNPJ, EMAIL, TELEFONE, CHAVE_ALEATORIA)"
+                },
+                "pixKey": {
+                  "type": "string",
+                  "description": "The PIX key associated with the receiver"
+                }
+              },
+              "example": {
+                "name": "Receiver Name",
+                "document": "151.645.480-46",
+                "email": "receiver@email.com",
+                "pixKeyType": "CPF",
+                "pixKey": "151.645.480-46"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  }
+}
