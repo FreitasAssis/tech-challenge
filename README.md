@@ -49,6 +49,8 @@ Supposing you are using localhost:3000, you can check all endpoints using Swagge
 
 ***[localhost:3000/api-docs](localhost:3000/api-docs)***
 
+I put in the root of project a Postman collection, you can use it to test the endpoints easier.
+
 ## 💡 How to test
 
 I implemented some cases of test, unit and integration to this application. I should have covered more cases, but I put only the main examples, other cases may be added using them like examples.
