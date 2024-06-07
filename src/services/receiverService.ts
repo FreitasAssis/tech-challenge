@@ -220,7 +220,7 @@ const receiverService = {
             : "Receivers not found"
         }`,
         receivers: receivers.rows,
-        status: 200,
+        status: receivers.rows.length ? 200 : 404,
       };
     } catch (message) {
       return {
